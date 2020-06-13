@@ -148,3 +148,7 @@ $(".grid").click(function(){
 $("body").mouseup(function(){
   setSingleState("pixelMouseDown", false)
 })
+
+window.oncontextmenu = function () {
+  return false;
+}
