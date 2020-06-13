@@ -25,12 +25,20 @@ function pixelMouseDown(e) {
 }
 
 function pixelMouseUp(e) {
+  if(e.which == 3){
+    e.preventDefault()
+    setSingleState("inEraseMode", false)
+  }
   setSingleState("pixelMouseDown", false)
   let pixel = $(e.target)
   renderPixel(pixel)
 }
 
 function pixelMouseOver(e) {
+  if(e.which == 3){
+    e.preventDefault()
+    setSingleState("inEraseMode", true)
+  }
   if (getState("pixelMouseDown")) {
     let pixel = $(e.target)
     renderPixel(pixel)
@@ -135,4 +143,8 @@ $(".eraser").click(function() {
 $(".grid").click(function(){
   $(this).toggleClass("grid-clicked");
   $("main div").toggleClass("border_true")
+})
+
+$("body").mouseup(function(){
+  setSingleState("pixelMouseDown", false)
 })
