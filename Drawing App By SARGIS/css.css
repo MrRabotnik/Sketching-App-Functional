@@ -19,10 +19,12 @@ section{
   outline: none;
 }
 .color{
-  padding: 0.5%;
+  border: 0;
   font-size: 1.5vw;
   outline: none;
   margin-right: 1%;
+  width: 5%;
+  height: 3vw;
 
 }
 main{
